@@ -9,6 +9,7 @@ const CadastroProduto = ()=>{
     let [nome,setNome] = useState('');
     let [descricao,setDescricao] = useState('');
     let [preco,setPreco] = useState(0);
+    let [foto,setFoto] = useState('');
 //Continua Aqui
     return(
         <View>
@@ -27,6 +28,8 @@ const CadastroProduto = ()=>{
                             }
                         }
              inputMode="numeric" value={preco.toString()} />
+             <Text   >Foto:</Text>
+             <TextInput onChangeText={setFoto} value={foto} />
              <Button title="Cadastrar" onPress={Cadastrar}></Button>
             
         </View>
@@ -37,6 +40,7 @@ const CadastroProduto = ()=>{
             nome: nome,
             descricao: descricao,
             preco: preco,
+            foto: foto
         } as Produto;
         let api = 'https://api-docker-2t8m.onrender.com/api/produtos';
         axios.post(api,produto) 
