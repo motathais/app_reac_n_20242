@@ -31,7 +31,7 @@ export default function Index() {
     <View
       style={estilo.container}
     >
-     <ListaProdutos produtos={produtos}></ListaProdutos>
+     <ListaProdutos produtos={produtos} aoAtualizar={carregaProdutos}></ListaProdutos>
 
      <Button title='Cadastrar'
       onPress={()=>{telaCadastro()}} >
@@ -46,7 +46,6 @@ export default function Index() {
   
   }
 }
-
 
 
 const estilo= StyleSheet.create({
